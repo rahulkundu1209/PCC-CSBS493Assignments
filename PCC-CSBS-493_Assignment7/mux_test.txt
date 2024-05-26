@@ -1,0 +1,129 @@
+--------------------------------------------------------------------------------
+-- Company: 
+-- Engineer:
+--
+-- Create Date:   20:41:38 04/16/2024
+-- Design Name:   
+-- Module Name:   /home/rahul/VHDLProjects/mux_8to1/mux_test.vhd
+-- Project Name:  mux_8to1
+-- Target Device:  
+-- Tool versions:  
+-- Description:   
+-- 
+-- VHDL Test Bench Created by ISE for module: mux_rtl
+-- 
+-- Dependencies:
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+--
+-- Notes: 
+-- This testbench has been automatically generated using types std_logic and
+-- std_logic_vector for the ports of the unit under test.  Xilinx recommends
+-- that these types always be used for the top-level I/O of a design in order
+-- to guarantee that the testbench will bind correctly to the post-implementation 
+-- simulation model.
+--------------------------------------------------------------------------------
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+ 
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--USE ieee.numeric_std.ALL;
+ 
+ENTITY mux_test IS
+END mux_test;
+ 
+ARCHITECTURE behavior OF mux_test IS 
+ 
+    -- Component Declaration for the Unit Under Test (UUT)
+ 
+    COMPONENT mux_rtl
+    PORT(
+         I0 : IN  std_logic;
+         I1 : IN  std_logic;
+         I2 : IN  std_logic;
+         I3 : IN  std_logic;
+         I4 : IN  std_logic;
+         I5 : IN  std_logic;
+         I6 : IN  std_logic;
+         I7 : IN  std_logic;
+         S0 : IN  std_logic;
+         S1 : IN  std_logic;
+         S2 : IN  std_logic;
+         O : OUT  std_logic
+        );
+    END COMPONENT;
+    
+
+   --Inputs
+   signal I0 : std_logic := '0';
+   signal I1 : std_logic := '0';
+   signal I2 : std_logic := '0';
+   signal I3 : std_logic := '0';
+   signal I4 : std_logic := '0';
+   signal I5 : std_logic := '0';
+   signal I6 : std_logic := '0';
+   signal I7 : std_logic := '0';
+   signal S0 : std_logic := '0';
+   signal S1 : std_logic := '0';
+   signal S2 : std_logic := '0';
+
+ 	--Outputs
+   signal O : std_logic;
+   -- No clocks detected in port list. Replace <clock> below with 
+   -- appropriate port name 
+ 
+ 
+BEGIN
+ 
+	-- Instantiate the Unit Under Test (UUT)
+   uut: mux_rtl PORT MAP (
+          I0 => I0,
+          I1 => I1,
+          I2 => I2,
+          I3 => I3,
+          I4 => I4,
+          I5 => I5,
+          I6 => I6,
+          I7 => I7,
+          S0 => S0,
+          S1 => S1,
+          S2 => S2,
+          O => O
+        );
+
+   -- Clock process definitions 
+
+   -- Stimulus process
+   stim_proc: process
+   begin		
+		I0<='0';I1<='0';I2<='0';I3<='0';I4<='0';I5<='0';I6<='0';I7<='0';
+		S2<='0';S1<='0';S0<='0';
+		wait for 1 ps;
+		I0<='0';I1<='1';I2<='0';I3<='0';I4<='0';I5<='0';I6<='0';I7<='0';
+		S2<='0';S1<='0';S0<='1';
+		wait for 1 ps;
+		I0<='0';I1<='0';I2<='0';I3<='0';I4<='0';I5<='0';I6<='0';I7<='0';
+		S2<='0';S1<='1';S0<='0';
+		wait for 1 ps;
+		I0<='0';I1<='0';I2<='0';I3<='1';I4<='0';I5<='0';I6<='0';I7<='0';
+		S2<='0';S1<='1';S0<='1';
+		wait for 1 ps;
+		I0<='0';I1<='0';I2<='0';I3<='0';I4<='0';I5<='0';I6<='0';I7<='0';
+		S2<='1';S1<='0';S0<='0';
+		wait for 1 ps;
+		I0<='0';I1<='0';I2<='0';I3<='0';I4<='0';I5<='1';I6<='0';I7<='0';
+		S2<='1';S1<='0';S0<='1';
+		wait for 1 ps;
+		I0<='0';I1<='0';I2<='0';I3<='0';I4<='0';I5<='0';I6<='0';I7<='0';
+		S2<='1';S1<='1';S0<='0';
+		wait for 1 ps;
+		I0<='0';I1<='0';I2<='0';I3<='0';I4<='0';I5<='0';I6<='0';I7<='1';
+		S2<='1';S1<='1';S0<='1';
+		wait for 1 ps;
+      
+   end process;
+
+END;

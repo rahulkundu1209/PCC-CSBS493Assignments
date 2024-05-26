@@ -1,0 +1,54 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    20:22:37 04/16/2024 
+-- Design Name: 
+-- Module Name:    mux_rtl - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity mux_rtl is
+    Port ( I0, I1, I2, I3, I4, I5, I6, I7 : in  STD_LOGIC;
+           S0, S1, S2 : in  STD_LOGIC;
+           O : out  STD_LOGIC);
+end mux_rtl;
+
+architecture Behavioral of mux_rtl is
+
+begin
+
+O <= ((not S2)and(not S1)and(not S0)and(I0))or
+		((not S2)and(not S1)and(S0)and(I1))or
+		((not S2)and(S1)and(not S0)and(I2))or
+		((not S2)and(S1)and(S0)and(I3))or
+		((S2)and(not S1)and(not S0)and(I4))or
+		((S2)and(not S1)and(S0)and(I5))or
+		((S2)and(S1)and(not S0)and(I6))or
+		((S2)and(S1)and(S0)and(I7));
+
+
+
+end Behavioral;
+
